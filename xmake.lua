@@ -11,7 +11,7 @@ toolchain("riscv-none-embed")
     -- 标记为独立工具链
     set_kind("standalone")
     -- 定义交叉编译工具链地址
-    set_sdkdir("~/work/wch_riscv/MRS_Toolchain_Linux_x64_V1.60/risc_v_embedded_gcc") --需要修改
+    set_sdkdir("~/Work/work/wch/toolchain/MRS_Toolchain_Linux_x64_V1.92/RISC-V_Embedded_GCC") --需要修改
     set_toolset("cc","riscv-none-embed-gcc")
     set_toolset("ld","riscv-none-embed-gcc")
 toolchain_end()
@@ -46,6 +46,8 @@ target("test")
         "./Peripheral/src",
         "./Core",
         "./Debug",
+        "./Hardware",
+        "./tiny-macro-os",
     }
     -- 头文件路径
     local inc_path = {
@@ -53,6 +55,8 @@ target("test")
         "./User",
         "./Core",
         "./Debug",
+        "./Hardware",
+        "./tiny-macro-os",
     }
 
     -- 添加源文件路径
@@ -107,7 +111,7 @@ target("test")
         cprint("Compile finished!!!")
         cprint("Next, generate HEX and bin files.")
         -- 设置编译链工具的路径
-        local bsdk = "/home/mecono/work/wch_riscv/MRS_Toolchain_Linux_x64_V1.60/risc_v_embedded_gcc"
+        local bsdk = "/home/meconolite/Work/work/wch//toolchain/MRS_Toolchain_Linux_x64_V1.92/RISC-V_Embedded_GCC"
 
         local cobjcopy = bsdk .. "/bin/riscv-none-embed-objcopy"
         local csize = bsdk .. "/bin/riscv-none-embed-size"

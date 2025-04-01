@@ -1,0 +1,3 @@
+[submodule "tiny-macro-os"]
+	path = tiny-macro-os
+	url = https://github.com/smartmx/tiny-macro-os.git
